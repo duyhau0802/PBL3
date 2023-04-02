@@ -1,6 +1,6 @@
 ﻿namespace PBL3
 {
-    partial class FormSearch
+    partial class FormSearch_PhongBan
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDuLieu = new System.Windows.Forms.TextBox();
             this.cbbTieuChi = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.KetQua = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             // txtDuLieu
             // 
             this.txtDuLieu.Location = new System.Drawing.Point(194, 129);
-            this.txtDuLieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDuLieu.Margin = new System.Windows.Forms.Padding(4);
             this.txtDuLieu.Name = "txtDuLieu";
             this.txtDuLieu.Size = new System.Drawing.Size(335, 31);
             this.txtDuLieu.TabIndex = 3;
@@ -75,27 +75,27 @@
             // 
             this.cbbTieuChi.FormattingEnabled = true;
             this.cbbTieuChi.Location = new System.Drawing.Point(194, 52);
-            this.cbbTieuChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbTieuChi.Margin = new System.Windows.Forms.Padding(4);
             this.cbbTieuChi.Name = "cbbTieuChi";
             this.cbbTieuChi.Size = new System.Drawing.Size(335, 33);
             this.cbbTieuChi.TabIndex = 4;
             this.cbbTieuChi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // btnSearch
+            // btnTimKiem
             // 
-            this.btnSearch.Location = new System.Drawing.Point(702, 76);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(176, 55);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Location = new System.Drawing.Point(702, 76);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(176, 55);
+            this.btnTimKiem.TabIndex = 5;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
             // KetQua
             // 
             this.KetQua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.KetQua.Location = new System.Drawing.Point(15, 291);
-            this.KetQua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KetQua.Margin = new System.Windows.Forms.Padding(4);
             this.KetQua.Name = "KetQua";
             this.KetQua.RowHeadersWidth = 51;
             this.KetQua.RowTemplate.Height = 29;
@@ -106,13 +106,13 @@
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.cbbTieuChi);
             this.groupBox1.Controls.Add(this.txtDuLieu);
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(970, 210);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -130,7 +130,7 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Kết quả:";
             // 
-            // FormSearch
+            // FormSearch_PhongBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,9 +138,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.KetQua);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FormSearch";
-            this.Text = "FormSearch";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FormSearch_PhongBan";
+            this.Text = "FormSearchPhongBan";
             ((System.ComponentModel.ISupportInitialize)(this.KetQua)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -155,7 +155,7 @@
         private Label label2;
         private TextBox txtDuLieu;
         private ComboBox cbbTieuChi;
-        private Button btnSearch;
+        private Button btnTimKiem;
         private DataGridView KetQua;
         private GroupBox groupBox1;
         private Label label3;

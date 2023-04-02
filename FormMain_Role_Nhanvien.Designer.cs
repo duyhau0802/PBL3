@@ -166,7 +166,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain_Role_Nhanvien";
-            this.Text = "FormMain";
+            this.Text = "FormMain_Role_Nhanvien";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
