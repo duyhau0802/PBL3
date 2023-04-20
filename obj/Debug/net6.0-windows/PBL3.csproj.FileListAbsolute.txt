@@ -8,7 +8,6 @@ D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormAddNewUser.resources
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormChangePass.resources
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormLogin.resources
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormMain.resources
-D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormMain_Role_Nhanvien.resources
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormSearch.resources
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormUpdate.resources
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.Properties.Resources.resources
@@ -23,3 +22,16 @@ D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\refint\PBL3.dll
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.pdb
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.genruntimeconfig.cache
 D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\ref\PBL3.dll
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormAddPhongBan.resources
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormSearch_PhongBan.resources
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormUpdate_PhongBan.resources
+D:\Workspace\Csharp\PBL3\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Workspace\Csharp\PBL3\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Workspace\Csharp\PBL3\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Workspace\Csharp\PBL3\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Workspace\Csharp\PBL3\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Workspace\Csharp\PBL3\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.csproj.CopyComplete
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3..resources
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormImport.resources
+D:\Workspace\Csharp\PBL3\obj\Debug\net6.0-windows\PBL3.FormMainRoleNhanVien.resources

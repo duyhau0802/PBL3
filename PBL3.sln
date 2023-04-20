@@ -7,10 +7,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBL3", "PBL3.csproj", "{3F0
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		a|Any CPU = a|Any CPU
+		b|Any CPU = b|Any CPU
+		c|Any CPU = c|Any CPU
+		d|Any CPU = d|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.a|Any CPU.ActiveCfg = a|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.a|Any CPU.Build.0 = a|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.b|Any CPU.ActiveCfg = b|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.b|Any CPU.Build.0 = b|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.c|Any CPU.ActiveCfg = c|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.c|Any CPU.Build.0 = c|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.d|Any CPU.ActiveCfg = d|Any CPU
+		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.d|Any CPU.Build.0 = d|Any CPU
 		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F057784-6F15-4124-9CCC-59E1F3BDFE61}.Release|Any CPU.ActiveCfg = Release|Any CPU

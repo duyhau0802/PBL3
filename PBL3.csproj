@@ -6,13 +6,28 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Configurations>Debug;Release;a;b;c;d</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FormAddPhongBan.cs" />
     <Compile Update="FormChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormMain_Role_Nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormSearch_PhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormUpdate_PhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

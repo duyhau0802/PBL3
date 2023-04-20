@@ -22,10 +22,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
@@ -34,8 +30,8 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txbUsername = new System.Windows.Forms.TextBox();
-            this.txbPassword = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckbShowPass = new System.Windows.Forms.CheckBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -72,23 +68,25 @@
             resources.ApplyResources(this.txbUsername, "txbUsername");
             this.txbUsername.Name = "txbUsername";
             // 
-            // txbPassword
+            // ckbShowPass
             // 
-            resources.ApplyResources(this.txbPassword, "txbPassword");
-            this.txbPassword.Name = "txbPassword";
+            resources.ApplyResources(this.ckbShowPass, "ckbShowPass");
+            this.ckbShowPass.Name = "ckbShowPass";
+            this.ckbShowPass.UseVisualStyleBackColor = true;
+            this.ckbShowPass.CheckedChanged += new System.EventHandler(this.ckbShowPassEvent);
             // 
-            // checkBox1
+            // txtPass
             // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.txtPass, "txtPass");
+            this.txtPass.Name = "txtPass";
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // FormLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.txbPassword);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.ckbShowPass);
             this.Controls.Add(this.txbUsername);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbUsername);
@@ -107,7 +105,7 @@
         private Label lbUsername;
         private Label lbPassword;
         private TextBox txbUsername;
-        private TextBox txbPassword;
-        private CheckBox checkBox1;
+        private CheckBox ckbShowPass;
+        private TextBox txtPass;
     }
 }

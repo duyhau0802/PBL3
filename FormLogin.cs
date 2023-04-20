@@ -7,17 +7,45 @@ namespace PBL3
             InitializeComponent();
         }
 
+        bool CheckLogin(string name, string pass) {
+            for (int i = 0; i < ListUser.Instance.ListAccountUser.Count; i++) {
+                if (name == ListUser.Instance.ListAccountUser[i].UserName && pass == ListUser.Instance.ListAccountUser[i].PassWord)
+                {
+                    Constant.AccountType = ListUser.Instance.ListAccountUser[i].AccountType;
+                    return true;
+                } 
+            }
+            return false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            FormMain f = new FormMain();
-            f.Show();
-            this.Hide();
-            f.Logout += F_Logout;
+            if (CheckLogin(txbUsername.Text, txtPass.Text))
+            {
+                if (Constant.AccountType == true)
+                {
+                    FormMain f = new FormMain();
+                    f.Show();
+                    this.Hide();
+                    f.Logout += F_Logout;
+                }
+                else
+                {
+                    FormMainRoleNhanVien f = new FormMainRoleNhanVien();
+                    f.Show();
+                    this.Hide();
+                    f.Logout += F_Logout;
+                }
+            }
+            else {
+                MessageBox.Show("Sai ten hoac mat khau", "Loi",MessageBoxButtons.OK);
+                txbUsername.Focus();
+                return;
+            }
+            
         }
 
         private void F_Logout(object? sender, EventArgs e)
         {
-            (sender as FormMain).isExit = false;
             (sender as FormMain).Close();
             this.Show();
         }
@@ -33,6 +61,15 @@ namespace PBL3
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
+        }
+
+        private void ckbShowPassEvent(object sender, EventArgs e)
+        {
+            if(ckbShowPass.Checked)
+                txtPass.UseSystemPasswordChar = false;
+            if (!ckbShowPass.Checked)
+                txtPass.UseSystemPasswordChar = true;
+
         }
     }
 }

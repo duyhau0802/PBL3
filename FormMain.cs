@@ -41,8 +41,58 @@ namespace PBL3
             Logout(this, new EventArgs());
         }
 
+        Modify modify;
+
+        
+
+        private void FormMain_Load_1(object sender, EventArgs e)
+        {
+            modify = new Modify();
+            try
+            {
+                dataGridView1.DataSource = modify.GetAllNhanVien();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loi : " + ex.Message);
+            }
+        }
+
+        private void importFromExcelFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormImport f = new FormImport();
+            f.Show();
+        }
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAddNewUser f = new FormAddNewUser();
+            f.Show();
+            
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormSearch f = new FormSearch();
+            f.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormUpdate f = new FormUpdate();
+            f.Show();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChangePass f = new FormChangePass();
+            f.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = modify.GetAllNhanVien();
+        }
     }
 }
