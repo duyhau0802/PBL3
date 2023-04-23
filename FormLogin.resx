@@ -65,14 +65,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 209</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>246, 167</value>
   </data>
   <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 64</value>
+    <value>136, 51</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnLogin.TabIndex" type="System.Int32, mscorlib">
@@ -80,9 +76,6 @@
   </data>
   <data name="btnLogin.Text" xml:space="preserve">
     <value>Đăng nhập</value>
-  </data>
-  <data name="btnLogin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnLogin.Name" xml:space="preserve">
     <value>btnLogin</value>
@@ -103,22 +96,16 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>504, 209</value>
-  </data>
-  <data name="btnExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>403, 167</value>
   </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 64</value>
+    <value>94, 51</value>
   </data>
   <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="btnExit.Text" xml:space="preserve">
     <value>Thoát</value>
-  </data>
-  <data name="btnExit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
@@ -139,13 +126,10 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="lbUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 41</value>
-  </data>
-  <data name="lbUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>42, 33</value>
   </data>
   <data name="lbUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 27</value>
+    <value>124, 22</value>
   </data>
   <data name="lbUsername.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -172,13 +156,10 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="lbPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 110</value>
-  </data>
-  <data name="lbPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>42, 88</value>
   </data>
   <data name="lbPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 27</value>
+    <value>82, 22</value>
   </data>
   <data name="lbPassword.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -202,13 +183,10 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="txbUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 38</value>
-  </data>
-  <data name="txbUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>200, 30</value>
   </data>
   <data name="txbUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 35</value>
+    <value>297, 30</value>
   </data>
   <data name="txbUsername.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -232,13 +210,10 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="ckbShowPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 151</value>
-  </data>
-  <data name="ckbShowPass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>211, 121</value>
   </data>
   <data name="ckbShowPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 29</value>
+    <value>148, 24</value>
   </data>
   <data name="ckbShowPass.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -262,13 +237,10 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="txtPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 110</value>
-  </data>
-  <data name="txtPass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>200, 88</value>
   </data>
   <data name="txtPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 35</value>
+    <value>297, 30</value>
   </data>
   <data name="txtPass.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -289,13 +261,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 25</value>
+    <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>692, 288</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>554, 230</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

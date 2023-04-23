@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace PBL3
 {
     public partial class FormLogin : Form
@@ -6,7 +8,7 @@ namespace PBL3
         {
             InitializeComponent();
         }
-
+        /*
         bool CheckLogin(string name, string pass) {
             for (int i = 0; i < ListUser.Instance.ListAccountUser.Count; i++) {
                 if (name == ListUser.Instance.ListAccountUser[i].UserName && pass == ListUser.Instance.ListAccountUser[i].PassWord)
@@ -16,10 +18,12 @@ namespace PBL3
                 } 
             }
             return false;
-        }
+        }*/
+        Modify modify;
         private void button1_Click(object sender, EventArgs e)
         {
-            if (CheckLogin(txbUsername.Text, txtPass.Text))
+            modify= new Modify();
+            if (modify.checkLogin(txbUsername.Text, txtPass.Text))
             {
                 if (Constant.AccountType == true)
                 {
@@ -46,7 +50,13 @@ namespace PBL3
 
         private void F_Logout(object? sender, EventArgs e)
         {
-            (sender as FormMain).Close();
+            if((sender as FormMain) != null)
+            {
+                (sender as FormMain).Close();
+            } else
+            {
+                (sender as FormMainRoleNhanVien).Close();
+            }
             this.Show();
         }
         private void FormLogin_FormClosed(object sender, FormClosingEventArgs e)

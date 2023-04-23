@@ -38,7 +38,6 @@
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.btnLogin, "btnLogin");
-            this.btnLogin.Image = global::PBL3.Properties.Resources.Accept;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.UseCompatibleTextRendering = true;
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -47,7 +46,6 @@
             // btnExit
             // 
             resources.ApplyResources(this.btnExit, "btnExit");
-            this.btnExit.Image = global::PBL3.Properties.Resources.exit;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
