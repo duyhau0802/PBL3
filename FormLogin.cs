@@ -1,3 +1,4 @@
+using PBL3.Model;
 using System.Diagnostics;
 
 namespace PBL3
@@ -19,11 +20,12 @@ namespace PBL3
             }
             return false;
         }*/
-        Modify modify;
+
+        UserDAO dao;
         private void button1_Click(object sender, EventArgs e)
         {
-            modify= new Modify();
-            if (modify.checkLogin(txbUsername.Text, txtPass.Text))
+            dao = new UserDAO();
+            if (dao.checkLogin(txbUsername.Text, txtPass.Text))
             {
                 if (Constant.AccountType == true)
                 {

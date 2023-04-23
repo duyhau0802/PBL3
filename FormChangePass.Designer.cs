@@ -56,6 +56,7 @@
             this.btnExit.Image = global::PBL3.Properties.Resources.exit;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lbUsername
             // 

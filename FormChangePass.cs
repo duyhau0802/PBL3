@@ -2,6 +2,8 @@ namespace PBL3
 {
     public partial class FormChangePass : Form
     {
+
+        public event EventHandler Exit;
         public FormChangePass()
         {
             InitializeComponent();
@@ -17,6 +19,11 @@ namespace PBL3
         private void lbPassword_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Exit(this, new EventArgs());
         }
     }
 }

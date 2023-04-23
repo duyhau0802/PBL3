@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,16 +42,16 @@ namespace PBL3
             Logout(this, new EventArgs());
         }
 
-        Modify modify;
+        NhanvienDAO dao;
 
         
 
         private void FormMain_Load_1(object sender, EventArgs e)
         {
-            modify = new Modify();
+            dao = new NhanvienDAO();
             try
             {
-                dataGridView1.DataSource = modify.GetAllNhanVien();
+                dataGridView1.DataSource = dao.GetAllNhanVien();
             }
             catch (Exception ex)
             {

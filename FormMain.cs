@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,16 +42,16 @@ namespace PBL3
             Logout(this, new EventArgs());
         }
 
-        Modify modify;
+        NhanvienDAO dao;
 
         
 
         private void FormMain_Load_1(object sender, EventArgs e)
         {
-            modify = new Modify();
+            dao = new NhanvienDAO();
             try
             {
-                dataGridView1.DataSource = modify.GetAllNhanVien();
+                dataGridView1.DataSource = dao.GetAllNhanVien();
             }
             catch (Exception ex)
             {
@@ -69,30 +70,54 @@ namespace PBL3
         {
             FormAddNewUser f = new FormAddNewUser();
             f.Show();
-            
+            f.Exit += F_Exit;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             FormSearch f = new FormSearch();
             f.Show();
+            f.Exit += F_Exit;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             FormUpdate f = new FormUpdate();
             f.Show();
+            f.Exit += F_Exit;
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormChangePass f = new FormChangePass();
             f.Show();
+            f.Exit += F_Exit;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = modify.GetAllNhanVien();
+            dataGridView1.DataSource = dao.GetAllNhanVien();
+        }
+
+        private void F_Exit(object? sender, EventArgs e)
+        {
+            if ((sender as FormAddNewUser) != null)
+            {
+                (sender as FormAddNewUser).Close();
+            }
+            else if((sender as FormSearch) != null)
+            {
+                (sender as FormSearch).Close();
+            }
+            else if((sender as FormUpdate) != null)
+            {
+                (sender as FormUpdate).Close();
+            }
+            else
+            {
+                (sender as FormChangePass).Close();
+            }
         }
     }
 }
