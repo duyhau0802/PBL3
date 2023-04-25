@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PBL3.Entity;
 using System.Diagnostics.Eventing.Reader;
+using System.Xml.Linq;
 
 namespace PBL3.Model
 {
@@ -19,6 +20,37 @@ namespace PBL3.Model
         }
         // dataset
         // datatable
+
+        public NhanVien getById(int id)
+        {
+            NhanVien nv = new NhanVien();
+            SqlConnection sqlcon = Connection.GetConnection();
+            string query = "select * from chitietnhanvien as nv where nv.id = " + id;
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    nv.Id = reader.GetInt32(0);
+                    nv.Name = reader.GetString(1);
+                    nv.Gender = reader.GetString(2);
+                    nv.DateOfBirth = reader.GetDateTime(3);
+                    nv.PhoneNumber = reader.GetString(4);
+                    nv.Address = reader.GetString(5);
+                    nv.CCCD = reader.GetString(6);
+                    nv.Email = reader.GetString(7);
+                    nv.Useraccount = reader.GetInt32(8);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            finally { sqlcon.Close(); }
+            return nv;
+        }
 
         public DataTable searchNhanvien(string tieuchi, string value)
         {

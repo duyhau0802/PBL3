@@ -36,7 +36,7 @@ namespace PBL3
                 }
                 else
                 {
-                    FormMainRoleNhanVien f = new FormMainRoleNhanVien();
+                    FormMainRoleNhanVien f = new FormMainRoleNhanVien(dao.getIdByName(txbUsername.Text));
                     f.Show();
                     this.Hide();
                     f.Logout += F_Logout;

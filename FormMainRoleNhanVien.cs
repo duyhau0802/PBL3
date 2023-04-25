@@ -1,4 +1,5 @@
-﻿using PBL3.Model;
+﻿using PBL3.Entity;
+using PBL3.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,12 @@ namespace PBL3
     public partial class FormMainRoleNhanVien : Form
     {
         public bool isExit = true;
+        static int id_now = -1;
+
         public event EventHandler Logout;
-        public FormMainRoleNhanVien()
+        public FormMainRoleNhanVien(int id)
         {
+            id_now = id;
             InitializeComponent();
         }
 
@@ -24,7 +28,7 @@ namespace PBL3
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isExit) {
-                if (MessageBox.Show("Ban co muon thoat", "Cảnh báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn thoát", "Cảnh báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     e.Cancel = true;
                 }
@@ -49,13 +53,22 @@ namespace PBL3
         private void FormMain_Load_1(object sender, EventArgs e)
         {
             dao = new NhanvienDAO();
-            try
+            NhanVien nv = dao.getById(id_now);
+            if (nv != null)
             {
-                dataGridView1.DataSource = dao.GetAllNhanVien();
+                string[] dateofBirth = nv.DateOfBirth.ToShortDateString().Split('/');
+                this.lbID.Text += nv.Id;
+                this.lbName.Text += nv.Name;
+                this.lbGender.Text += nv.Gender;
+                this.lbBirth.Text += dateofBirth[1] + "/" + dateofBirth[0] + "/" + dateofBirth[2];
+                this.lbPhone.Text += nv.PhoneNumber;
+                this.lbAddress.Text += nv.Address;
+                this.lbIDC.Text += nv.CCCD;
+                this.lbEmail.Text += nv.Email;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Loi : " + ex.Message);
+                MessageBox.Show("Error");
             }
         }
 
@@ -66,11 +79,5 @@ namespace PBL3
             this.Hide();
         }
         #endregion
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FormSearch f = new FormSearch();
-            f.Show();
-        }
     }
 }
