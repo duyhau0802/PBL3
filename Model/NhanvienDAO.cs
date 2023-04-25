@@ -20,6 +20,53 @@ namespace PBL3.Model
         // dataset
         // datatable
 
+        public DataTable searchNhanvien(string tieuchi, string value)
+        {
+            SqlConnection sqlcon = Connection.GetConnection();
+            DataTable dataTable = new DataTable();
+            string query = "select * from chitietnhanvien where ";
+            if (tieuchi.Equals("ID"))
+            {
+                query += "id = " + value;
+            } else if(tieuchi.Equals("Họ tên"))
+            {
+                query += "hoten = N\'" + value + "\'";
+            } else if(tieuchi.Equals("Giới tính"))
+            {
+                query += "gioitinh = N\'" + value + "\'";
+            } else if (tieuchi.Equals("SĐT"))
+            {
+                query += "sdt = \'" + value + "\'";
+            } else if (tieuchi.Equals("Địa chỉ"))
+            {
+                query += "diachi = B\'" + value + "\'";
+            } else if (tieuchi.Equals("CCCD"))
+            {
+                query += "cccd = \'" + value + "\'";
+            } else if (tieuchi.Equals("Email"))
+            {
+                query += "email = N\'" + value + "\'";
+            } else if(tieuchi.Equals("Chức vụ"))
+            {
+                query = "select * " +
+                    "from chitietnhanvien as ct " +
+                    "join chucvu as cv on ct.chucvu = cv.id " +
+                    "where cv.tenchucvu = N\'" + value + "\'";
+            }
+            try
+            {
+                sqlcon.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlcon);
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+                
+            } catch (Exception ex)
+            {
+                return null;
+            }
+            finally { sqlcon.Close(); }
+        }
+
         public bool updateNhanVien(NhanVien nv)
         {
             SqlConnection sqlcon = Connection.GetConnection();

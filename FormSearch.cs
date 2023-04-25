@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,22 @@ namespace PBL3
         private void button2_Click(object sender, EventArgs e)
         {
             Exit(this, new EventArgs());
+        }
+
+        NhanvienDAO dao;
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string tieuchi = cbbTieuChi.Text;
+            string value = txtDuLieu.Text;
+            dao = new NhanvienDAO();
+            try
+            {
+                KetQua.DataSource = dao.searchNhanvien(tieuchi, value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loi : " + ex.Message);
+            }
         }
     }
 }

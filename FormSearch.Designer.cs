@@ -35,8 +35,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.KetQua = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.KetQua)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,15 @@
             // cbbTieuChi
             // 
             this.cbbTieuChi.FormattingEnabled = true;
+            this.cbbTieuChi.Items.AddRange(new object[] {
+            "ID",
+            "Họ tên",
+            "Giới tính",
+            "SĐT",
+            "Địa chỉ",
+            "CCCD",
+            "Email",
+            "Chức vụ"});
             this.cbbTieuChi.Location = new System.Drawing.Point(155, 42);
             this.cbbTieuChi.Name = "cbbTieuChi";
             this.cbbTieuChi.Size = new System.Drawing.Size(269, 28);
@@ -87,6 +96,7 @@
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // KetQua
             // 
@@ -113,17 +123,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(13, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 23);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Kết quả:";
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -134,6 +133,17 @@
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(13, 197);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Kết quả:";
             // 
             // FormSearch
             // 
