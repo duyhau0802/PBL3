@@ -79,5 +79,34 @@ namespace PBL3
             this.Hide();
         }
         #endregion
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChangePass f = new FormChangePass(id_now);
+            f.Show();
+            f.Exit += F_Exit;
+            this.Hide();
+        }
+
+        private void F_Exit(object? sender, EventArgs e)
+        {
+            if ((sender as FormTask) != null)
+            {
+                (sender as FormTask).Close();
+            }
+            else
+            {
+                (sender as FormChangePass).Close();
+            }
+            this.Show();
+        }
+
+        private void btnNhiemvu_Click(object sender, EventArgs e)
+        {
+            FormTask f = new FormTask(id_now);
+            f.Show();
+            f.Exit += F_Exit;
+            this.Hide();
+        }
     }
 }

@@ -72,3 +72,4 @@ D:\Hoctap\C#\PBL3\obj\a\net6.0-windows\refint\PBL3.dll
 D:\Hoctap\C#\PBL3\obj\a\net6.0-windows\PBL3.pdb
 D:\Hoctap\C#\PBL3\obj\a\net6.0-windows\PBL3.genruntimeconfig.cache
 D:\Hoctap\C#\PBL3\obj\a\net6.0-windows\ref\PBL3.dll
+D:\Hoctap\C#\PBL3\obj\a\net6.0-windows\PBL3.FormTask.resources

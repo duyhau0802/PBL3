@@ -56,10 +56,10 @@ namespace PBL3
             {
                 (sender as FormMain).Close();
             } 
-            else
+            else if ((sender as FormMainRoleNhanVien) != null)
             {
                 (sender as FormMainRoleNhanVien).Close();
-            }
+            } 
             this.Show();
         }
         private void FormLogin_FormClosed(object sender, FormClosingEventArgs e)
