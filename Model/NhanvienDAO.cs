@@ -156,6 +156,17 @@ namespace PBL3.Model
             return true;
         }
 
+        PhongbanDAO pbdao;
+        public void deletePhongbanOfNhanvien(int idtp) //xóa phòng ban có nhân viên bị xóa làm trường phòng
+        {
+            pbdao = new PhongbanDAO();
+            List<int> list = pbdao.getIdByTruongphong(idtp);
+            foreach (int id in list)
+            {
+                pbdao.deletePhongban(id);
+            }
+        }
+
         public bool deleteNhanvien(int id)
         {
             SqlConnection sqlcon = Connection.GetConnection();

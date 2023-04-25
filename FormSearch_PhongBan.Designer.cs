@@ -86,6 +86,7 @@
             // 
             // KetQua
             // 
+            this.KetQua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.KetQua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.KetQua.Location = new System.Drawing.Point(375, 64);
             this.KetQua.Name = "KetQua";

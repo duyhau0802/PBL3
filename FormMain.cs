@@ -178,9 +178,20 @@ namespace PBL3
         {
             if(index != -1)
             {
-                int id = int.Parse(data.Rows[index].Cells[0].Value.ToString());
-                nvdao.deleteNhanvien(id);
-                data.DataSource = nvdao.GetAllNhanVien();
+                if (control)
+                {
+                    int id = int.Parse(data.Rows[index].Cells[0].Value.ToString());
+                    nvdao.deletePhongbanOfNhanvien(id);
+                    nvdao.deleteNhanvien(id);
+                    data.DataSource = nvdao.GetAllNhanVien();
+                }
+                else
+                {
+                    int id = int.Parse(data.Rows[index].Cells[0].Value.ToString());
+                    pbdao.deletePhongban(id);
+                    data.DataSource = pbdao.GetAllPhongBan();
+
+                }
             }
         }
 

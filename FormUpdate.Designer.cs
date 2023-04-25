@@ -46,9 +46,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtGioiTinh = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -245,38 +242,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
             // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(170, 12);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(125, 27);
-            this.txtUser.TabIndex = 22;
-            this.txtUser.Visible = false;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(301, 12);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(125, 27);
-            this.txtPosition.TabIndex = 23;
-            this.txtPosition.Visible = false;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(39, 12);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(125, 27);
-            this.txtID.TabIndex = 24;
-            this.txtID.Visible = false;
-            // 
             // FormUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 592);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.txtPosition);
-            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.data);
@@ -288,7 +258,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -311,8 +280,5 @@
         private TextBox txtEmail;
         private ComboBox txtGioiTinh;
         private GroupBox groupBox1;
-        private TextBox txtUser;
-        private TextBox txtPosition;
-        private TextBox txtID;
     }
 }

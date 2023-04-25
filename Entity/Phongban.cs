@@ -12,6 +12,13 @@ namespace PBL3.Entity
         private string _name;
         private int _truongphong;
 
+        public Phongban(int id, string name, int truongphong)
+        {
+            _id = id;
+            _name = name;
+            _truongphong = truongphong;
+        }
+
         public Phongban(string name, int truongphong)
         {
             _name = name;

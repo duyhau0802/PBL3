@@ -18,7 +18,7 @@ namespace PBL3.Model
         public DataTable GetAllPhongBan()
         {
             DataTable dataTable = new DataTable();
-            string query = "select d.name as N\'Tên phòng ban\', c.hoten as N\'Tên trường phòng\' from department as d join chitietnhanvien as c on d.truongphong = c.id";
+            string query = "select d.id, d.name as N\'Tên phòng ban\', c.hoten as N\'Tên trường phòng\' from department as d join chitietnhanvien as c on d.truongphong = c.id";
             using (SqlConnection sqlConnection = Connection.GetConnection())
             {
                 sqlConnection.Open();
@@ -76,6 +76,29 @@ namespace PBL3.Model
             return kq;
         }
 
+        public List<int> getIdByTruongphong(int id)
+        {
+            List<int> list = new List<int>();
+            SqlConnection sqlcon = Connection.GetConnection();
+            string query = "select pb.id from department as pb where pb.truongphong = " + id;
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetInt32(0));
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            finally { sqlcon.Close(); }
+            return list;
+        }
+
         public bool insertPb(Phongban pb)
         {
             SqlConnection sqlcon = Connection.GetConnection();
@@ -107,7 +130,7 @@ namespace PBL3.Model
         {
             SqlConnection sqlcon = Connection.GetConnection();
             DataTable dataTable = new DataTable();
-            string query = "select d.name as N'Tên phòng ban', c.hoten as N'Tên trường phòng' " +
+            string query = "select d.id, d.name as N'Tên phòng ban', c.hoten as N'Tên trường phòng' " +
                 "from department as d " +
                 "join chitietnhanvien as c on d.truongphong = c.id " +
                 "where ";
@@ -134,6 +157,58 @@ namespace PBL3.Model
                 return null;
             }
             finally { sqlcon.Close(); }
+        }
+
+        public bool updatePhongban(Phongban pb)
+        {
+            SqlConnection sqlcon = Connection.GetConnection();
+            string query = "update department " +
+                "set name=N\'" + pb.Name + "\'," +
+                "truongphong=" + pb.Truongphong +
+                " where department.id=@id";
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+
+                cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = pb.Id;
+
+                cmd.ExecuteNonQuery();//thuc thi lenh truy van
+
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                sqlcon.Close();
+            }
+            return true;
+        }
+
+        public bool deletePhongban(int id)
+        {
+            SqlConnection sqlcon = Connection.GetConnection();
+            string query = "delete from department where department.id=@id";
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+                cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+
+                cmd.ExecuteNonQuery();//thuc thi lenh truy van
+
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                sqlcon.Close();
+            }
+            return true;
         }
     }
 }
