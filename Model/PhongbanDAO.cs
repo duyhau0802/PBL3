@@ -18,7 +18,7 @@ namespace PBL3.Model
         public DataTable GetAllPhongBan()
         {
             DataTable dataTable = new DataTable();
-            string query = "select * from department";
+            string query = "select d.name as N\'Tên phòng ban\', c.hoten as N\'Tên trường phòng\' from department as d join chitietnhanvien as c on d.truongphong = c.id";
             using (SqlConnection sqlConnection = Connection.GetConnection())
             {
                 sqlConnection.Open();
@@ -101,6 +101,39 @@ namespace PBL3.Model
                 sqlcon.Close();
             }
             return true;
+        }
+
+        public DataTable searchPhongban(string tieuchi, string value)
+        {
+            SqlConnection sqlcon = Connection.GetConnection();
+            DataTable dataTable = new DataTable();
+            string query = "select d.name as N'Tên phòng ban', c.hoten as N'Tên trường phòng' " +
+                "from department as d " +
+                "join chitietnhanvien as c on d.truongphong = c.id " +
+                "where ";
+            
+
+            if (tieuchi.Equals("Tên phòng ban"))
+            {
+                query += "name = \'" + value + "\'";
+            }
+            else if (tieuchi.Equals("Trưởng phòng"))
+            {
+                query += "truongphong = " + value;
+            }
+            try
+            {
+                sqlcon.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlcon);
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally { sqlcon.Close(); }
         }
     }
 }
