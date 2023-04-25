@@ -1,4 +1,6 @@
-﻿namespace PBL3
+﻿using PBL3.Model;
+
+namespace PBL3
 {
     partial class FormAddNewUser
     {
@@ -36,7 +38,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtGender = new System.Windows.Forms.ComboBox();
-            this.dateOfbirth = new System.Windows.Forms.DateTimePicker();
+            this.txtNgaysinh = new System.Windows.Forms.DateTimePicker();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -50,18 +52,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textUserId = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txbPhongban = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -79,7 +74,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtGender);
-            this.groupBox1.Controls.Add(this.dateOfbirth);
+            this.groupBox1.Controls.Add(this.txtNgaysinh);
             this.groupBox1.Controls.Add(this.txtCCCD);
             this.groupBox1.Controls.Add(this.txtSdt);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -173,13 +168,13 @@
             this.txtGender.Size = new System.Drawing.Size(224, 28);
             this.txtGender.TabIndex = 14;
             // 
-            // dateOfbirth
+            // txtNgaysinh
             // 
-            this.dateOfbirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateOfbirth.Location = new System.Drawing.Point(139, 88);
-            this.dateOfbirth.Name = "dateOfbirth";
-            this.dateOfbirth.Size = new System.Drawing.Size(224, 27);
-            this.dateOfbirth.TabIndex = 13;
+            this.txtNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaysinh.Location = new System.Drawing.Point(139, 88);
+            this.txtNgaysinh.Name = "txtNgaysinh";
+            this.txtNgaysinh.Size = new System.Drawing.Size(224, 27);
+            this.txtNgaysinh.TabIndex = 13;
             // 
             // txtCCCD
             // 
@@ -288,18 +283,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.cbbPosition);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textUserId);
-            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txbPhongban);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(12, 298);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(886, 164);
@@ -307,28 +295,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin hợp đồng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(836, 111);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(22, 15);
-            this.label22.TabIndex = 25;
-            this.label22.Text = "(*)";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(836, 52);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(22, 15);
-            this.label21.TabIndex = 24;
-            this.label21.Text = "(*)";
             // 
             // label20
             // 
@@ -341,56 +307,21 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "(*)";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(369, 52);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(22, 15);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "(*)";
-            // 
             // cbbPosition
             // 
             this.cbbPosition.FormattingEnabled = true;
-            this.cbbPosition.Location = new System.Drawing.Point(606, 50);
+            this.cbbPosition.Location = new System.Drawing.Point(139, 50);
             this.cbbPosition.Name = "cbbPosition";
             this.cbbPosition.Size = new System.Drawing.Size(224, 28);
             this.cbbPosition.TabIndex = 21;
             // 
-            // comboBox1
+            // txbPhongban
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 28);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(606, 109);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(224, 27);
-            this.textBox10.TabIndex = 20;
-            // 
-            // textUserId
-            // 
-            this.textUserId.Location = new System.Drawing.Point(139, 50);
-            this.textUserId.Name = "textUserId";
-            this.textUserId.Size = new System.Drawing.Size(224, 27);
-            this.textUserId.TabIndex = 14;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(476, 111);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 22);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Lương";
+            this.txbPhongban.FormattingEnabled = true;
+            this.txbPhongban.Location = new System.Drawing.Point(139, 109);
+            this.txbPhongban.Name = "txbPhongban";
+            this.txbPhongban.Size = new System.Drawing.Size(224, 28);
+            this.txbPhongban.TabIndex = 2;
             // 
             // label10
             // 
@@ -406,21 +337,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(476, 52);
+            this.label9.Location = new System.Drawing.Point(24, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 22);
             this.label9.TabIndex = 15;
             this.label9.Text = "Chức vụ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(24, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 22);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Mã nhân viên";
             // 
             // button1
             // 
@@ -479,6 +400,7 @@
             this.Name = "FormAddNewUser";
             this.Text = "FormAddNewUser";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddNewUser_FormClosed);
+            this.Load += new System.EventHandler(this.FormAddNewUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -512,22 +434,15 @@
         private Label label13;
         private Label label12;
         private ComboBox txtGender;
-        private Label label22;
-        private Label label21;
         private Label label20;
-        private Label label19;
         private ComboBox cbbPosition;
-        private ComboBox comboBox1;
-        private TextBox textBox10;
-        private TextBox textUserId;
-        private Label label11;
+        private ComboBox txbPhongban;
         private Label label10;
         private Label label9;
-        private Label label8;
         private Button button1;
         private Button button2;
         private Label label15;
         private Label label23;
-        private DateTimePicker dateOfbirth;
+        private DateTimePicker txtNgaysinh;
     }
 }

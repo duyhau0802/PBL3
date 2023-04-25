@@ -84,10 +84,8 @@ namespace PBL3.Model
                 sqlcon.Open();
                 cmd = new SqlCommand(query, sqlcon);
 
-                cmd.Parameters.Add("@gioitinh", SqlDbType.VarChar).Value = nv.Gender;
                 cmd.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = nv.DateOfBirth;
                 cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = nv.PhoneNumber;
-                cmd.Parameters.Add("@diachi", SqlDbType.VarChar).Value = nv.Address;
                 cmd.Parameters.Add("@cccd", SqlDbType.VarChar).Value = nv.CCCD;
                 cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = nv.Email;
                 cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = nv.Id;
@@ -124,19 +122,26 @@ namespace PBL3.Model
         public bool insert(NhanVien nv)
         {
             SqlConnection sqlcon = Connection.GetConnection();
-            string query = "insert into chitietnhanvien (hoten, gioitinh, ngaysinh, sdt, diachi, cccd, email) values (@hoten,@gioitinh,@ngaysinh,@sdt,@diachi,@cccd,@email)";
+            string query = "insert into chitietnhanvien(hoten,gioitinh,ngaysinh,sdt,diachi,cccd,email,chucvu,useraccount) values " +
+                "(N\'" + nv.Name + "\'," +
+                "N\'" + nv.Gender + "\'," +
+                "@ngaysinh," +
+                "@sdt," +
+                "N\'" + nv.Address + "\'," +
+                "@cccd," +
+                "@email," +
+                "@chucvu," +
+                "@useraccount)";
             try
             {
                 sqlcon.Open();
                 cmd = new SqlCommand(query, sqlcon);
-
-                cmd.Parameters.Add("@hoten", SqlDbType.VarChar).Value = nv.Name;
-                cmd.Parameters.Add("@gioitinh", SqlDbType.VarChar).Value = nv.Gender;
                 cmd.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = nv.DateOfBirth;
                 cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = nv.PhoneNumber;
-                cmd.Parameters.Add("@diachi", SqlDbType.VarChar).Value = nv.Address;
                 cmd.Parameters.Add("@cccd", SqlDbType.VarChar).Value = nv.CCCD;
                 cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = nv.Email;
+                cmd.Parameters.Add("@chucvu", SqlDbType.Int).Value = nv.Chucvu;
+                cmd.Parameters.Add("@useraccount", SqlDbType.Int).Value = nv.Useraccount;
 
                 cmd.ExecuteNonQuery();//thuc thi lenh truy van
 

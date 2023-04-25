@@ -37,14 +37,16 @@ namespace PBL3
             dao = new NhanvienDAO();
             string name = this.txtName.Text;
             string gender = this.txtGender.Text;
-            DateTime ngaysinh = this.dateOfbirth.Value;
+            DateTime ngaysinh = this.txtNgaysinh.Value;
             //DateTime ngaysinh = DateTime.Now;
             string diaChi = this.txtDiachi.Text;
             string phoneNumber = this.txtSdt.Text;
             string email = this.txtEmail.Text;
             string cccd = this.txtCCCD.Text;
-            int user = int.Parse(this.textUserId.Text);
-            int position = int.Parse(this.cbbPosition.Text);
+            ChucvuDAO chucvu = new ChucvuDAO();
+            int user = chucvu.getIdByName(this.cbbPosition.Text);
+            PhongbanDAO pb = new PhongbanDAO();
+            int position = pb.getIdByName(this.txbPhongban.Text);
 
             nv = new NhanVien(name,gender,ngaysinh,phoneNumber,diaChi,cccd,email, user, position);
             if (dao.insert(nv))
@@ -60,6 +62,15 @@ namespace PBL3
         private void button2_Click(object sender, EventArgs e)
         {
             Exit(this, new EventArgs());
+        }
+
+        private void FormAddNewUser_Load(object sender, EventArgs e)
+        {
+            this.txtGender.Items.AddRange(new object[] { "Nam", "Nữ", "Không rõ" });
+            ChucvuDAO chucvu = new ChucvuDAO();
+            this.cbbPosition.Items.AddRange(chucvu.getAllNameChucvu().ToArray());
+            PhongbanDAO pb = new PhongbanDAO();
+            this.txbPhongban.Items.AddRange(pb.getAllNamePhongBan().ToArray());
         }
     }
 }
