@@ -55,6 +55,7 @@ namespace PBL3
         private void FormMain_Load_1(object sender, EventArgs e)
         {
             nvdao = new NhanvienDAO();
+            pbdao = new PhongbanDAO();
             try
             {
                 data.DataSource = nvdao.GetAllNhanVien();
@@ -164,7 +165,13 @@ namespace PBL3
                 (sender as FormChangePass).Close();
                 this.Show();
             }
-            data.DataSource = nvdao.GetAllNhanVien();
+            if (control)
+            {
+                data.DataSource = nvdao.GetAllNhanVien();
+            } else
+            {
+                data.DataSource = pbdao.GetAllPhongBan();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

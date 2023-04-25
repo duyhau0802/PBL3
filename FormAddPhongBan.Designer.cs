@@ -170,8 +170,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox2);
+            this.Location = new System.Drawing.Point(200, 150);
             this.Name = "FormAddPhongBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormAddPhongBan";
+            this.Load += new System.EventHandler(this.FormAddPhongBan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

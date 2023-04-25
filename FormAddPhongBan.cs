@@ -36,7 +36,8 @@ namespace PBL3
         {
             pbdao = new PhongbanDAO();
             string name = txbName.Text;
-            int truongphong = int.Parse(cbbTruong.Text);
+            NhanvienDAO nhanvien = new NhanvienDAO();
+            int truongphong = nhanvien.getIdByName(cbbTruong.Text);
             Phongban pb = new Phongban(name, truongphong);
             if (pbdao.insertPb(pb))
             {
@@ -51,6 +52,12 @@ namespace PBL3
         private void button2_Click(object sender, EventArgs e)
         {
             Exit(this, new EventArgs());
+        }
+
+        private void FormAddPhongBan_Load(object sender, EventArgs e)
+        {
+            NhanvienDAO nhanvien = new NhanvienDAO();
+            this.cbbTruong.Items.AddRange(nhanvien.getAllNameNhanVien().ToArray());
         }
     }
 }

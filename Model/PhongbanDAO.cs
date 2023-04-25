@@ -80,7 +80,7 @@ namespace PBL3.Model
         {
             SqlConnection sqlcon = Connection.GetConnection();
             string query = "insert into department(name, truongphong) values " +
-                "@name," +
+                "(@name," +
                 "@truongphong)";
             try
             {

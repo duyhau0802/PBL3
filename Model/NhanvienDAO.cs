@@ -179,5 +179,51 @@ namespace PBL3.Model
             }
             return true;
         }
+
+        public List<String> getAllNameNhanVien()
+        {
+            List<String> list = new List<String>();
+            SqlConnection sqlcon = Connection.GetConnection();
+            DataTable dataTable = new DataTable();
+            string query = "select nv.hoten from chitietnhanvien as nv";
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(0));
+                }
+                return list;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public int getIdByName(String name)
+        {
+            int kq = 0;
+            SqlConnection sqlcon = Connection.GetConnection();
+            string query = "select nv.id from chitietnhanvien as nv where nv.hoten = N\'" + name + "\'";
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    kq = reader.GetInt32(0);
+                }
+            }
+            catch
+            {
+                return -1;
+            }
+            finally { sqlcon.Close(); }
+            return kq;
+        }
     }
 }
