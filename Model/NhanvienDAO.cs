@@ -39,20 +39,21 @@ namespace PBL3.Model
                 query += "sdt = \'" + value + "\'";
             } else if (tieuchi.Equals("Địa chỉ"))
             {
-                query += "diachi = B\'" + value + "\'";
+                query += "diachi = N\'" + value + "\'";
             } else if (tieuchi.Equals("CCCD"))
             {
                 query += "cccd = \'" + value + "\'";
             } else if (tieuchi.Equals("Email"))
             {
                 query += "email = N\'" + value + "\'";
-            } else if(tieuchi.Equals("Chức vụ"))
-            {
-                query = "select * " +
-                    "from chitietnhanvien as ct " +
-                    "join chucvu as cv on ct.chucvu = cv.id " +
-                    "where cv.tenchucvu = N\'" + value + "\'";
-            }
+            } 
+            //else if(tieuchi.Equals("Chức vụ"))
+            //{
+            //    query = "select * " +
+            //        "from chitietnhanvien as ct " +
+            //        "join chucvu as cv on ct.chucvu = cv.id " +
+            //        "where cv.tenchucvu = N\'" + value + "\'";
+            //}
             try
             {
                 sqlcon.Open();
@@ -122,7 +123,7 @@ namespace PBL3.Model
         public bool insert(NhanVien nv)
         {
             SqlConnection sqlcon = Connection.GetConnection();
-            string query = "insert into chitietnhanvien(hoten,gioitinh,ngaysinh,sdt,diachi,cccd,email,chucvu,useraccount) values " +
+            string query = "insert into chitietnhanvien(hoten,gioitinh,ngaysinh,sdt,diachi,cccd,email,useraccount) values " +
                 "(N\'" + nv.Name + "\'," +
                 "N\'" + nv.Gender + "\'," +
                 "@ngaysinh," +
@@ -130,7 +131,6 @@ namespace PBL3.Model
                 "N\'" + nv.Address + "\'," +
                 "@cccd," +
                 "@email," +
-                "@chucvu," +
                 "@useraccount)";
             try
             {
@@ -140,7 +140,6 @@ namespace PBL3.Model
                 cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = nv.PhoneNumber;
                 cmd.Parameters.Add("@cccd", SqlDbType.VarChar).Value = nv.CCCD;
                 cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = nv.Email;
-                cmd.Parameters.Add("@chucvu", SqlDbType.Int).Value = nv.Chucvu;
                 cmd.Parameters.Add("@useraccount", SqlDbType.Int).Value = nv.Useraccount;
 
                 cmd.ExecuteNonQuery();//thuc thi lenh truy van

@@ -53,14 +53,15 @@ namespace PBL3
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.cbbPosition = new System.Windows.Forms.ComboBox();
-            this.txbPhongban = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -162,60 +163,67 @@ namespace PBL3
             // 
             // txtGender
             // 
+            this.txtGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtGender.FormattingEnabled = true;
             this.txtGender.Location = new System.Drawing.Point(606, 35);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(224, 28);
+            this.txtGender.Size = new System.Drawing.Size(224, 30);
             this.txtGender.TabIndex = 14;
             // 
             // txtNgaysinh
             // 
+            this.txtNgaysinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtNgaysinh.Location = new System.Drawing.Point(139, 88);
             this.txtNgaysinh.Name = "txtNgaysinh";
-            this.txtNgaysinh.Size = new System.Drawing.Size(224, 27);
+            this.txtNgaysinh.Size = new System.Drawing.Size(224, 30);
             this.txtNgaysinh.TabIndex = 13;
             // 
             // txtCCCD
             // 
-            this.txtCCCD.Location = new System.Drawing.Point(606, 147);
+            this.txtCCCD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCD.Location = new System.Drawing.Point(606, 146);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(224, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(224, 30);
             this.txtCCCD.TabIndex = 12;
             // 
             // txtSdt
             // 
-            this.txtSdt.Location = new System.Drawing.Point(606, 90);
+            this.txtSdt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSdt.Location = new System.Drawing.Point(606, 89);
             this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(224, 27);
+            this.txtSdt.Size = new System.Drawing.Size(224, 30);
             this.txtSdt.TabIndex = 11;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(139, 202);
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(139, 201);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(224, 27);
+            this.txtEmail.Size = new System.Drawing.Size(224, 30);
             this.txtEmail.TabIndex = 9;
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(139, 147);
+            this.txtDiachi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDiachi.Location = new System.Drawing.Point(139, 146);
             this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(224, 27);
+            this.txtDiachi.Size = new System.Drawing.Size(224, 30);
             this.txtDiachi.TabIndex = 8;
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(139, 35);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(224, 27);
+            this.txtName.Size = new System.Drawing.Size(224, 30);
             this.txtName.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(476, 149);
+            this.label7.Location = new System.Drawing.Point(454, 149);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 22);
             this.label7.TabIndex = 6;
@@ -225,7 +233,7 @@ namespace PBL3
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(476, 92);
+            this.label6.Location = new System.Drawing.Point(454, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 22);
             this.label6.TabIndex = 5;
@@ -265,7 +273,7 @@ namespace PBL3
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(476, 37);
+            this.label2.Location = new System.Drawing.Point(454, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 22);
             this.label2.TabIndex = 1;
@@ -283,9 +291,10 @@ namespace PBL3
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtPassword);
+            this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.cbbPosition);
-            this.groupBox2.Controls.Add(this.txbPhongban);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(12, 298);
@@ -293,7 +302,7 @@ namespace PBL3
             this.groupBox2.Size = new System.Drawing.Size(886, 164);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin hợp đồng";
+            this.groupBox2.Text = "Thông tin tài khoản";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label20
@@ -307,31 +316,15 @@ namespace PBL3
             this.label20.TabIndex = 23;
             this.label20.Text = "(*)";
             // 
-            // cbbPosition
-            // 
-            this.cbbPosition.FormattingEnabled = true;
-            this.cbbPosition.Location = new System.Drawing.Point(139, 50);
-            this.cbbPosition.Name = "cbbPosition";
-            this.cbbPosition.Size = new System.Drawing.Size(224, 28);
-            this.cbbPosition.TabIndex = 21;
-            // 
-            // txbPhongban
-            // 
-            this.txbPhongban.FormattingEnabled = true;
-            this.txbPhongban.Location = new System.Drawing.Point(139, 109);
-            this.txbPhongban.Name = "txbPhongban";
-            this.txbPhongban.Size = new System.Drawing.Size(224, 28);
-            this.txbPhongban.TabIndex = 2;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(24, 111);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 22);
+            this.label10.Size = new System.Drawing.Size(88, 22);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Phòng ban";
+            this.label10.Text = "Password";
             // 
             // label9
             // 
@@ -339,9 +332,9 @@ namespace PBL3
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(24, 52);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 22);
+            this.label9.Size = new System.Drawing.Size(88, 22);
             this.label9.TabIndex = 15;
-            this.label9.Text = "Chức vụ";
+            this.label9.Text = "Username";
             // 
             // button1
             // 
@@ -385,6 +378,33 @@ namespace PBL3
             this.label23.Size = new System.Drawing.Size(83, 20);
             this.label23.TabIndex = 27;
             this.label23.Text = ": Bắt buộc";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Location = new System.Drawing.Point(139, 49);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(224, 30);
+            this.txtUsername.TabIndex = 24;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Location = new System.Drawing.Point(139, 108);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(224, 30);
+            this.txtPassword.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(369, 49);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(22, 15);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "(*)";
             // 
             // FormAddNewUser
             // 
@@ -435,8 +455,6 @@ namespace PBL3
         private Label label12;
         private ComboBox txtGender;
         private Label label20;
-        private ComboBox cbbPosition;
-        private ComboBox txbPhongban;
         private Label label10;
         private Label label9;
         private Button button1;
@@ -444,5 +462,8 @@ namespace PBL3
         private Label label15;
         private Label label23;
         private DateTimePicker txtNgaysinh;
+        private TextBox txtPassword;
+        private TextBox txtUsername;
+        private Label label8;
     }
 }

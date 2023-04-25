@@ -43,12 +43,17 @@ namespace PBL3
             string phoneNumber = this.txtSdt.Text;
             string email = this.txtEmail.Text;
             string cccd = this.txtCCCD.Text;
-            ChucvuDAO chucvu = new ChucvuDAO();
-            int user = chucvu.getIdByName(this.cbbPosition.Text);
-            PhongbanDAO pb = new PhongbanDAO();
-            int position = pb.getIdByName(this.txbPhongban.Text);
 
-            nv = new NhanVien(name,gender,ngaysinh,phoneNumber,diaChi,cccd,email, user, position);
+            User user = new User(txtUsername.Text, txtPassword.Text, 2);
+            UserDAO userDAO = new UserDAO();
+            //Thay đôi username trong db thành trường unique
+            if (!userDAO.insertUser(user))
+            {
+                MessageBox.Show("error");
+                return;
+            }
+
+            nv = new NhanVien(name,gender,ngaysinh,phoneNumber,diaChi,cccd,email,userDAO.getIdByName(txtUsername.Text));
             if (dao.insert(nv))
             {
                 MessageBox.Show("OK");
@@ -67,10 +72,6 @@ namespace PBL3
         private void FormAddNewUser_Load(object sender, EventArgs e)
         {
             this.txtGender.Items.AddRange(new object[] { "Nam", "Nữ", "Không rõ" });
-            ChucvuDAO chucvu = new ChucvuDAO();
-            this.cbbPosition.Items.AddRange(chucvu.getAllNameChucvu().ToArray());
-            PhongbanDAO pb = new PhongbanDAO();
-            this.txbPhongban.Items.AddRange(pb.getAllNamePhongBan().ToArray());
         }
     }
 }

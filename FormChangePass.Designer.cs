@@ -29,31 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChangePass));
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbUsername = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.txbUsername = new System.Windows.Forms.TextBox();
-            this.txbPassword = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txbOldPass = new System.Windows.Forms.TextBox();
+            this.txbNewPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbConfirm = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnLogin
+            // btnChange
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.ControlLight;
-            resources.ApplyResources(this.btnLogin, "btnLogin");
-            this.btnLogin.Image = global::PBL3.Properties.Resources.Accept;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.UseCompatibleTextRendering = true;
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnChange.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.btnChange, "btnChange");
+            this.btnChange.Name = "btnChange";
+            this.btnChange.UseCompatibleTextRendering = true;
+            this.btnChange.UseVisualStyleBackColor = false;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnExit
             // 
             resources.ApplyResources(this.btnExit, "btnExit");
-            this.btnExit.Image = global::PBL3.Properties.Resources.exit;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -69,21 +66,16 @@
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
             // 
-            // txbUsername
+            // txbOldPass
             // 
-            resources.ApplyResources(this.txbUsername, "txbUsername");
-            this.txbUsername.Name = "txbUsername";
+            resources.ApplyResources(this.txbOldPass, "txbOldPass");
+            this.txbOldPass.Name = "txbOldPass";
             // 
-            // txbPassword
+            // txbNewPass
             // 
-            resources.ApplyResources(this.txbPassword, "txbPassword");
-            this.txbPassword.Name = "txbPassword";
-            // 
-            // checkBox1
-            // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.txbNewPass, "txbNewPass");
+            this.txbNewPass.Name = "txbNewPass";
+            this.txbNewPass.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -91,24 +83,24 @@
             this.label1.Name = "label1";
             this.label1.Click += new System.EventHandler(this.lbPassword_Click);
             // 
-            // textBox1
+            // txbConfirm
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.txbConfirm, "txbConfirm");
+            this.txbConfirm.Name = "txbConfirm";
+            this.txbConfirm.UseSystemPasswordChar = true;
             // 
             // FormChangePass
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txbPassword);
-            this.Controls.Add(this.txbUsername);
+            this.Controls.Add(this.txbConfirm);
+            this.Controls.Add(this.txbNewPass);
+            this.Controls.Add(this.txbOldPass);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbUsername);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnChange);
             this.Name = "FormChangePass";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,14 +109,13 @@
 
         #endregion
 
-        private Button btnLogin;
+        private Button btnChange;
         private Button btnExit;
         private Label lbUsername;
         private Label lbPassword;
-        private TextBox txbUsername;
-        private TextBox txbPassword;
-        private CheckBox checkBox1;
+        private TextBox txbOldPass;
+        private TextBox txbNewPass;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txbConfirm;
     }
 }

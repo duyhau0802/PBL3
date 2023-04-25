@@ -16,14 +16,13 @@ namespace PBL3.Entity
         private string _address;
         private string _CCCD;
         private string _email;
-        private int _chucvu;
         private int _useraccount;
 
         public NhanVien()
         {
         }
 
-        public NhanVien(int id, string name, string gender, DateTime dateOfBirth, string phoneNumber, string address, string cccd, string email, int user, int position)
+        public NhanVien(int id, string name, string gender, DateTime dateOfBirth, string phoneNumber, string address, string cccd, string email, int user)
         {
             _id = id;
             _name = name;
@@ -33,11 +32,10 @@ namespace PBL3.Entity
             _address = address;
             _CCCD = cccd;
             _email = email;
-            _chucvu = position;
             _useraccount= user;
         }
 
-        public NhanVien(string name, string gender, DateTime dateOfBirth, string phoneNumber, string address, string cccd, string email, int user, int position)
+        public NhanVien(string name, string gender, DateTime dateOfBirth, string phoneNumber, string address, string cccd, string email, int user)
         {
             _name = name;
             _gender = gender;
@@ -46,7 +44,6 @@ namespace PBL3.Entity
             _address = address;
             _CCCD = cccd;
             _email = email;
-            _chucvu = position;
             _useraccount = user;
         }
 
@@ -58,7 +55,6 @@ namespace PBL3.Entity
         public string Address { get => _address; set => _address = value; }
         public string CCCD { get => _CCCD; set => _CCCD = value; }
         public string Email { get => _email; set => _email = value; }
-        public int Chucvu { get => _chucvu; set => _chucvu = value; }
         public int Useraccount { get => _useraccount; set => _useraccount = value; }
     }
 }

@@ -38,16 +38,19 @@ namespace PBL3
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
-            txtID.Text = data.Rows[index].Cells[0].Value.ToString();
-            txtHoTen.Text = data.Rows[index].Cells[1].Value.ToString();
-            txtGioiTinh.Text = data.Rows[index].Cells[2].Value.ToString();
-            NgaySinh.Text = data.Rows[index].Cells[3].Value.ToString();
-            txtSDT.Text = data.Rows[index].Cells[4].Value.ToString();
-            txtDiaChi.Text = data.Rows[index].Cells[5].Value.ToString();
-            txtCMND.Text = data.Rows[index].Cells[6].Value.ToString();
-            txtEmail.Text = data.Rows[index].Cells[7].Value.ToString();
-            txtUser.Text = data.Rows[index].Cells[8].Value.ToString();
-            txtPosition.Text = data.Rows[index].Cells[9].Value.ToString();
+            if (index != -1)
+            {
+                txtID.Text = data.Rows[index].Cells[0].Value.ToString();
+                txtHoTen.Text = data.Rows[index].Cells[1].Value.ToString();
+                txtGioiTinh.Text = data.Rows[index].Cells[2].Value.ToString();
+                NgaySinh.Text = data.Rows[index].Cells[3].Value.ToString();
+                txtSDT.Text = data.Rows[index].Cells[4].Value.ToString();
+                txtDiaChi.Text = data.Rows[index].Cells[5].Value.ToString();
+                txtCMND.Text = data.Rows[index].Cells[6].Value.ToString();
+                txtEmail.Text = data.Rows[index].Cells[7].Value.ToString();
+                txtUser.Text = data.Rows[index].Cells[8].Value.ToString();
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -62,8 +65,7 @@ namespace PBL3
             string email = this.txtEmail.Text;
             string cccd = this.txtCMND.Text;
             int user = int.Parse(this.txtUser.Text);
-            int position = int.Parse(this.txtPosition.Text);
-            NhanVien nv = new NhanVien(id, name, gender, ngaysinh, phoneNumber, diaChi, cccd, email, user, position);
+            NhanVien nv = new NhanVien(id, name, gender, ngaysinh, phoneNumber, diaChi, cccd, email, user);
             if (dao.updateNhanVien(nv))
             {
                 MessageBox.Show("OK");

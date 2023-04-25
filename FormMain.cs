@@ -15,9 +15,14 @@ namespace PBL3
     {
         int index = -1;
         public bool isExit = true;
+        static int id_now = -1;
+
+        static bool control = true;
+
         public event EventHandler Logout;
-        public FormMain()
+        public FormMain(int id)
         {
+            id_now = id;
             InitializeComponent();
         }
 
@@ -25,7 +30,7 @@ namespace PBL3
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isExit) {
-                if (MessageBox.Show("Ban co muon thoat", "Cảnh báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn thoát?", "Cảnh báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     e.Cancel = true;
                 }
@@ -43,20 +48,20 @@ namespace PBL3
             Logout(this, new EventArgs());
         }
 
-        NhanvienDAO dao;
-
+        NhanvienDAO nvdao;
+        PhongbanDAO pbdao;
         
 
         private void FormMain_Load_1(object sender, EventArgs e)
         {
-            dao = new NhanvienDAO();
+            nvdao = new NhanvienDAO();
             try
             {
-                data.DataSource = dao.GetAllNhanVien();
+                data.DataSource = nvdao.GetAllNhanVien();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi : " + ex.Message);
+                MessageBox.Show("Lỗi : " + ex.Message);
             }
         }
 
@@ -69,36 +74,63 @@ namespace PBL3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormAddNewUser f = new FormAddNewUser();
-            f.Show();
-            f.Exit += F_Exit;
-
+            if (control)
+            {
+                FormAddNewUser f = new FormAddNewUser();
+                f.Show();
+                f.Exit += F_Exit;
+            }
+            else
+            {
+                FormAddPhongBan f = new FormAddPhongBan();
+                f.Show();
+                f.Exit += F_Exit;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormSearch f = new FormSearch();
-            f.Show();
-            f.Exit += F_Exit;
+            if (control)
+            {
+                FormSearch f = new FormSearch();
+                f.Show();
+                f.Exit += F_Exit;
+            } else
+            {
+                FormSearch_PhongBan f = new FormSearch_PhongBan();
+                f.Show();
+                f.Exit += F_Exit;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormUpdate f = new FormUpdate();
-            f.Show();
-            f.Exit += F_Exit;
+            if (control)
+            {
+                FormUpdate f = new FormUpdate();
+                f.Show();
+                f.Exit += F_Exit;
+            } 
+            else
+            {
+                FormUpdate_PhongBan f = new FormUpdate_PhongBan();
+                f.Show();
+                f.Exit += F_Exit;
+            }
+            
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormChangePass f = new FormChangePass();
+            FormChangePass f = new FormChangePass(id_now);
             f.Show();
             f.Exit += F_Exit;
+            this.Hide();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            data.DataSource = dao.GetAllNhanVien();
+            data.DataSource = nvdao.GetAllNhanVien();
         }
 
         private void F_Exit(object? sender, EventArgs e)
@@ -115,11 +147,24 @@ namespace PBL3
             {
                 (sender as FormUpdate).Close();
             }
+            else if ((sender as FormSearch_PhongBan) != null)
+            {
+                (sender as FormSearch_PhongBan).Close();
+            }
+            else if ((sender as FormUpdate_PhongBan) != null)
+            {
+                (sender as FormUpdate_PhongBan).Close();
+            }
+            else if ((sender as FormAddPhongBan) != null)
+            {
+                (sender as FormAddPhongBan).Close();
+            }
             else
             {
                 (sender as FormChangePass).Close();
+                this.Show();
             }
-            data.DataSource = dao.GetAllNhanVien();
+            data.DataSource = nvdao.GetAllNhanVien();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -127,14 +172,31 @@ namespace PBL3
             if(index != -1)
             {
                 int id = int.Parse(data.Rows[index].Cells[0].Value.ToString());
-                dao.deleteNhanvien(id);
-                data.DataSource = dao.GetAllNhanVien();
+                nvdao.deleteNhanvien(id);
+                data.DataSource = nvdao.GetAllNhanVien();
             }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
+        }
+
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            control = false;
+            pbdao = new PhongbanDAO();
+            this.labelTitle.Text = "Quản lí phòng ban";
+            data.DataSource = pbdao.GetAllPhongBan();
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            control = true;
+            nvdao = new NhanvienDAO();
+            this.labelTitle.Text = "Quản lí nhân viên";
+            data.DataSource = nvdao.GetAllNhanVien();
         }
     }
 }

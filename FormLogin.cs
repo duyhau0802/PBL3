@@ -29,7 +29,7 @@ namespace PBL3
             {
                 if (Constant.AccountType == true)
                 {
-                    FormMain f = new FormMain();
+                    FormMain f = new FormMain(dao.getIdByName(txbUsername.Text));
                     f.Show();
                     this.Hide();
                     f.Logout += F_Logout;
@@ -55,7 +55,8 @@ namespace PBL3
             if((sender as FormMain) != null)
             {
                 (sender as FormMain).Close();
-            } else
+            } 
+            else
             {
                 (sender as FormMainRoleNhanVien).Close();
             }

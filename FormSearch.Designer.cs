@@ -79,8 +79,7 @@
             "SĐT",
             "Địa chỉ",
             "CCCD",
-            "Email",
-            "Chức vụ"});
+            "Email"});
             this.cbbTieuChi.Location = new System.Drawing.Point(155, 42);
             this.cbbTieuChi.Name = "cbbTieuChi";
             this.cbbTieuChi.Size = new System.Drawing.Size(269, 28);

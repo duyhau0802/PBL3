@@ -26,8 +26,8 @@ namespace PBL3.Entity
         private ListUser()
         {
             listAccountUser = new List<User>();
-            listAccountUser.Add(new User("admin", "123", true));
-            listAccountUser.Add(new User("user", "123", false));
+            listAccountUser.Add(new User("admin", "123", 1));
+            listAccountUser.Add(new User("user", "123", 2));
 
         }
 

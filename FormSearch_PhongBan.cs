@@ -12,6 +12,8 @@ namespace PBL3
 {
     public partial class FormSearch_PhongBan : Form
     {
+        public event EventHandler Exit;
+
         public FormSearch_PhongBan()
         {
             InitializeComponent();
@@ -25,6 +27,11 @@ namespace PBL3
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Exit(this, new EventArgs());
         }
     }
 }

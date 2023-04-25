@@ -12,9 +12,17 @@ namespace PBL3
 {
     public partial class FormUpdate_PhongBan : Form
     {
+
+        public event EventHandler Exit;
+
         public FormUpdate_PhongBan()
         {
             InitializeComponent();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Exit(this, new EventArgs());
         }
     }
 }

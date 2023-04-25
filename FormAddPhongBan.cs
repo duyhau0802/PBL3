@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL3.Entity;
+using PBL3.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace PBL3
 {
     public partial class FormAddPhongBan : Form
     {
+        public event EventHandler Exit;
+
         public FormAddPhongBan()
         {
             InitializeComponent();
@@ -25,6 +29,28 @@ namespace PBL3
         private void label21_Click(object sender, EventArgs e)
         {
 
+        }
+
+        PhongbanDAO pbdao;
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            pbdao = new PhongbanDAO();
+            string name = txbName.Text;
+            int truongphong = int.Parse(cbbTruong.Text);
+            Phongban pb = new Phongban(name, truongphong);
+            if (pbdao.insertPb(pb))
+            {
+                MessageBox.Show("Thành công");
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Exit(this, new EventArgs());
         }
     }
 }

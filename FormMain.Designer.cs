@@ -47,7 +47,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.data = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
@@ -110,19 +110,21 @@
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
+            this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // phòngBanToolStripMenuItem
             // 
             this.phòngBanToolStripMenuItem.Name = "phòngBanToolStripMenuItem";
-            this.phòngBanToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.phòngBanToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.phòngBanToolStripMenuItem.Text = "Phòng ban";
+            this.phòngBanToolStripMenuItem.Click += new System.EventHandler(this.phòngBanToolStripMenuItem_Click);
             // 
             // lậpLịchToolStripMenuItem
             // 
             this.lậpLịchToolStripMenuItem.Name = "lậpLịchToolStripMenuItem";
-            this.lậpLịchToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.lậpLịchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.lậpLịchToolStripMenuItem.Text = "Lập lịch";
             // 
             // thốngKêToolStripMenuItem
@@ -221,23 +223,23 @@
             this.data.TabIndex = 7;
             this.data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(40, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 32);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Quản lí nhân viên";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTitle.ForeColor = System.Drawing.Color.Red;
+            this.labelTitle.Location = new System.Drawing.Point(40, 42);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(231, 32);
+            this.labelTitle.TabIndex = 8;
+            this.labelTitle.Text = "Quản lí nhân viên";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1518, 819);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.data);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -274,7 +276,7 @@
         private ToolStripMenuItem lậpLịchToolStripMenuItem;
         private GroupBox groupBox1;
         private DataGridView data;
-        private Label label1;
+        private Label labelTitle;
         private ToolStripMenuItem quảnLýTàiKhoảnToolStripMenuItem;
         private ToolStripMenuItem importFromExcelFileToolStripMenuItem;
         private ToolStripMenuItem exportToExcelFileToolStripMenuItem;

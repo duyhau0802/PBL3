@@ -10,17 +10,16 @@ namespace PBL3.Entity
     {
         private int _id;
         private string _name;
-        private int _leader;
+        private int _truongphong;
 
-        public Phongban(int id, string name, int leader)
+        public Phongban(string name, int truongphong)
         {
-            _id = id;
             _name = name;
-            _leader = leader;
+            _truongphong = truongphong;
         }
 
         public int Id { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
-        public int Leader { get => _leader; set => _leader = value; }
+        public int Truongphong { get => _truongphong; set => _truongphong = value; }
     }
 }
