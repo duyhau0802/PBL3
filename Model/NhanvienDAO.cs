@@ -156,5 +156,29 @@ namespace PBL3.Model
             }
             return true;
         }
+
+        public bool deleteNhanvien(int id)
+        {
+            SqlConnection sqlcon = Connection.GetConnection();
+            string query = "delete from chitietnhanvien where chitietnhanvien.id=@id";
+            try
+            {
+                sqlcon.Open();
+                cmd = new SqlCommand(query, sqlcon);
+                cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+
+                cmd.ExecuteNonQuery();//thuc thi lenh truy van
+
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                sqlcon.Close();
+            }
+            return true;
+        }
     }
 }

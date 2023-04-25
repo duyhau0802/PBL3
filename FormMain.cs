@@ -13,6 +13,7 @@ namespace PBL3
 {
     public partial class FormMain : Form
     {
+        int index = -1;
         public bool isExit = true;
         public event EventHandler Logout;
         public FormMain()
@@ -51,7 +52,7 @@ namespace PBL3
             dao = new NhanvienDAO();
             try
             {
-                dataGridView1.DataSource = dao.GetAllNhanVien();
+                data.DataSource = dao.GetAllNhanVien();
             }
             catch (Exception ex)
             {
@@ -97,7 +98,7 @@ namespace PBL3
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = dao.GetAllNhanVien();
+            data.DataSource = dao.GetAllNhanVien();
         }
 
         private void F_Exit(object? sender, EventArgs e)
@@ -118,6 +119,22 @@ namespace PBL3
             {
                 (sender as FormChangePass).Close();
             }
+            data.DataSource = dao.GetAllNhanVien();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(index != -1)
+            {
+                int id = int.Parse(data.Rows[index].Cells[0].Value.ToString());
+                dao.deleteNhanvien(id);
+                data.DataSource = dao.GetAllNhanVien();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
         }
     }
 }
